@@ -8,3 +8,15 @@
 
   <%= button_to "Destroy this restaurant", @restaurant, method: :delete %>
 </div>
+<div>
+  <%= link_to "Add a review", new_restaurant_review_path(@restaurant) %>
+</div>
+<div>
+  <p><strong>Reviews</strong></p>
+  <ul class="list-group">
+  <% @restaurant.reviews.each do |review| %>
+    <li class="list-group-item"><%= review.content %> with a <%= review.rating %> note</li>
+  <% end %>
+  </ul>
+<br>
+</div>
